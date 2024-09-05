@@ -18,7 +18,4 @@ unclassified:
     url: "http://localhost:8080/"
     adminAddress: "admin@example.com"
   jobs:
-    - name: "example-job-1"
-      path: "/usr/local/seedjob.groovy"
-#    - name: "example-job-2"
-#      path: "/var/lib/jenkins/jobs/example-job-2"
+    - file: /usr/local/seedjob.groovy

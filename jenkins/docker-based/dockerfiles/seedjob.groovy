@@ -4,7 +4,7 @@ job('seed_job') {
    remote {
     url('https://github.com/nickkostov/poc-jenkins')
    }
-   branch('main')
+   branch('master')
   }
  }
  steps {

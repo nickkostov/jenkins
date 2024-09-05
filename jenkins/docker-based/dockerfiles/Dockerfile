@@ -34,11 +34,11 @@ COPY jenkins.yaml /var/jenkins_home/casc_configs/jenkins.yaml
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
-# Environment Variable to set up the configuration 
+# Environment Variable to Skip the installation steps:
+# Although the everything is installing in the previous steps there is still a button that needs to be clicked, this removes it.
 
-#############################################################################
-#COPY seedjob.groovy /usr/local/seedjob.groovy
-#ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
-#
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
-#RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
+
+# Jobs in Jenkins
+COPY seedjob.groovy /usr/local/seedjob.groovy
