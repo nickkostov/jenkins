@@ -1,0 +1,24 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin123"
+          name: "Admin User"
+        - id: "developer"
+          password: "devpassword"
+          name: "Developer User"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  disableRememberMe: true
+unclassified:
+  location:
+    url: "http://localhost:8080/"
+    adminAddress: "admin@example.com"
+  jobs:
+    - name: "example-job-1"
+      path: "/usr/local/seedjob.groovy"
+#    - name: "example-job-2"
+#      path: "/var/lib/jenkins/jobs/example-job-2"
