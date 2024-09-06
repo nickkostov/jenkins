@@ -2,7 +2,7 @@ job('seed_job') {
  scm {
   git {
    remote {
-    url('https://github.com/nickkostov/poc-jenkins')
+    url('https://github.com/nickkostov/poc-jenkins.git')
    }
    branch('master')
   }

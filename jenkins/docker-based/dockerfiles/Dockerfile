@@ -1,20 +1,24 @@
-FROM jenkins/jenkins:2.462.2-jdk17
+FROM jenkins/jenkins:lts-jdk17
 
 LABEL maintainer="nikolay.yavorov.kostov@gmail.com"
 
 USER root
 
-RUN apt-get update && apt-get install -y lsb-release
+RUN apt-get update && apt install -y lsb-release ca-certificates git sudo
+
 
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
-  https://download.docker.com/linux/debian/gpg
-
-RUN echo "deb [arch=$(dpkg --print-architecture) \
+  https://download.docker.com/linux/debian/gpg && \
+  echo "deb [arch=$(dpkg --print-architecture) \
   signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
   https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 
 RUN apt-get update && apt-get install -y docker-ce-cli
+
+# Add Jenkins user to sudoers
+RUN usermod -aG sudo jenkins && \
+ echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER jenkins
 

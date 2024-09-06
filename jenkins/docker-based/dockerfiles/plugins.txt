@@ -117,3 +117,4 @@ workflow-scm-step:427.v4ca_6512e7df1
 workflow-step-api:678.v3ee58b_469476
 workflow-support:920.v59f71ce16f04
 ws-cleanup:0.46
+docker-plugin:1.6.2
