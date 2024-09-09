@@ -1,34 +1,205 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          description: "Test"
+          id: "nick"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "nick@MP-LT4R2QP7"
 jenkins:
-  systemMessage: "WOW"
-#  globalNodeProperties:
-#  - envVars:
-#      env:
-#      - key: VARIABLE1
-#        value: foo
-#      - key: VARIABLE2
-#        value: bar
-  securityRealm:
-    local:
-      allowsSignup: false
-      users:
-        - id: "admin"
-          password: "admin123"
-          name: "Admin User"
-        - id: "developer"
-          password: "devpassword"
-          name: "Developer User"
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
   disableRememberMe: true
+  labelAtoms:
+  - name: "built-in"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodeMonitors:
+  - "architecture"
+  - "clock"
+  - diskSpace:
+      freeSpaceThreshold: "1GiB"
+      freeSpaceWarningThreshold: "2GiB"
+  - "swapSpace"
+  - tmpSpace:
+      freeSpaceThreshold: "1GiB"
+      freeSpaceWarningThreshold: "2GiB"
+  - "responseTime"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "Admin User"
+        password: "admin123"
+        properties:
+        - "apiToken"
+        - "consoleUrlProvider"
+        - "mailer"
+        - "favorite"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "theme"
+        - "timezone"
+        - "experimentalFlags"
+      - id: "developer"
+        name: "Developer User"
+        password: "devpassword"
+        properties:
+        - "apiToken"
+        - "consoleUrlProvider"
+        - "mailer"
+        - "favorite"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "theme"
+        - "timezone"
+        - "experimentalFlags"
+  slaveAgentPort: 50000
+  systemMessage: "This is Jenkins using configuration as code"
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+appearance:
+  pipelineGraphView:
+    showGraphOnBuildPage: false
+    showGraphOnJobPage: false
+  prism:
+    theme: PRISM
+  themeManager:
+    disableUserThemes: false
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  cps:
+    hideSandbox: false
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: true
+  scriptApproval:
+    approvedScriptHashes:
+    - "SHA512:cc705c9b78a0e74ef6848be52631c947f6070397276679b3ba9fda66c3d1a4ad4aca2190249bdd28e1682b60db0d09c9ccfafb1f2dd3a74b03a6e1de1cef8052"
 unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8080/github-webhook/"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    injectCcudExtension: false
+    injectMavenExtension: false
+  junitTestResultStorage:
+    storage: "file"
   location:
-    url: "http://localhost:8080/"
     adminAddress: "admin@example.com"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
 tool:
   git:
     installations:
-      - name: git
-        home: /usr/bin/git
+    - home: "/usr/bin/git"
+      name: "git"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
 jobs:
-  - file: /usr/local/seedjob.groovy
+  - file: /usr/local/job-one.groovy

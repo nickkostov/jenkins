@@ -1,4 +1,12 @@
 jenkins:
+  systemMessage: "WOW"
+#  globalNodeProperties:
+#  - envVars:
+#      env:
+#      - key: VARIABLE1
+#        value: foo
+#      - key: VARIABLE2
+#        value: bar
   securityRealm:
     local:
       allowsSignup: false
@@ -13,9 +21,14 @@ jenkins:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
   disableRememberMe: true
-  remotingSecurity:
-    enabled: true
 unclassified:
   location:
     url: "http://localhost:8080/"
     adminAddress: "admin@example.com"
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/bin/git
+jobs:
+  - file: /usr/local/seedjob.groovy

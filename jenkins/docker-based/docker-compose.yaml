@@ -1,7 +1,7 @@
 services:
   docker:
     image: docker:dind
-    container_name: jenkins-docker
+    container_name: dind
     privileged: true
     networks:
       - jenkins
@@ -9,15 +9,16 @@ services:
       DOCKER_TLS_CERTDIR: /certs
     volumes:
       - jenkins-docker-certs:/certs/client
-      - jenkins-data:/var/jenkins_home
+      - jenkins_home:/var/jenkins_home:rw
     ports:
       - "2376:2376"
     command: --storage-driver overlay2
 
   jenkins:
-    depends_on: [docker]
-    #image: -jenkins:0.0.1
-    build: ./dockerfiles
+    image: jenkins-image:latest
+    #build: ./dockerfiles
+    links:
+      - "ssh-agent:ssh"
     container_name: jenkins
     restart: on-failure
     networks:
@@ -30,12 +31,22 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - jenkins-data:/var/jenkins_home
+      - jenkins_home:/var/jenkins_home:rw
+      - ./jobs:/var/jenkins_home/jobs:rw
       - jenkins-docker-certs:/certs/client:ro
+  ssh-agent:
+    image: jenkins/ssh-agent
+    container_name: ssh-agent
 
 networks:
   jenkins:
 
 volumes:
-  jenkins-data:
+  jenkins_home:
+    name: "jenkins_home_dir"
+    labels:
+      com.jenkins.description: "Home Dir of Jenkins" 
   jenkins-docker-certs:
+    name: "jenkins-certs-mgmt"
+    labels:
+      com.jenkins.description: "Certs for docker and more. Just check install docs" 

@@ -118,3 +118,4 @@ workflow-step-api:678.v3ee58b_469476
 workflow-support:920.v59f71ce16f04
 ws-cleanup:0.46
 docker-plugin:1.6.2
+ssh-slaves:2.973.v0fa_8c0dea_f9f
