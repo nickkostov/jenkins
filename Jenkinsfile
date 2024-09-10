@@ -1,4 +1,4 @@
-job('hello_world_job') {
+job('Load Jenkinsfiles') {
     // Set job description
     description('This is a Hello World proof of concept (POC) Jenkins job.')
 

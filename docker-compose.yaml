@@ -17,8 +17,8 @@ services:
   jenkins:
     image: jenkins-image:latest
     #build: ./dockerfiles
-    links:
-      - "ssh-agent:ssh"
+    #links:
+    #  - "ssh-agent:ssh"
     container_name: jenkins
     restart: on-failure
     networks:
@@ -34,9 +34,9 @@ services:
       - jenkins_home:/var/jenkins_home:rw
       - ./jobs:/var/jenkins_home/jobs:rw
       - jenkins-docker-certs:/certs/client:ro
-  ssh-agent:
-    image: jenkins/ssh-agent
-    container_name: ssh-agent
+  #ssh-agent:
+  #  image: jenkins/ssh-agent
+  #  container_name: ssh-agent
 
 networks:
   jenkins:

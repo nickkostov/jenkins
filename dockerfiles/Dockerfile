@@ -19,20 +19,30 @@ RUN apt-get update && apt-get install -y docker-ce-cli
 
 # Add Jenkins user to sudoers and docker group
 RUN usermod -aG sudo jenkins && \
-    usermod -aG docker jenkins && \
     echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Ensure Jenkins home directory exists and set permissions
 RUN mkdir -p /var/jenkins_home && \
     chown -R jenkins:jenkins /var/jenkins_home
 
+RUN chown jenkins:jenkins /var/tmp
+
+
 USER jenkins
+
+# SSH Configuration for the github
+RUN mkdir -p /var/jenkins_home/.ssh && \
+  ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+
+RUN sudo chown -R jenkins:jenkins /var/jenkins_home/.ssh/
 
 # Install Jenkins plugins
 RUN jenkins-plugin-cli --plugins "configuration-as-code:1850.va_a_8c31d3158b_"
 
 # Set Jenkins Configuration as Code (JCasC) file location
 ENV CASC_JENKINS_CONFIG="/var/jenkins_home/jenkins.yaml"
+# Disable Jenkins setup wizard
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 # Add JCasC config and plugins list
 ADD jenkins.yaml /var/jenkins_home/jenkins.yaml
@@ -41,8 +51,5 @@ ADD plugins.txt /usr/share/jenkins/ref/plugins.txt
 # Install plugins from file
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 
-# Disable Jenkins setup wizard
-ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
-
 # Add job configuration script
-ADD job-one.groovy /usr/local/job-one.groovy
+COPY jobs /usr/local/
