@@ -129,7 +129,7 @@ security:
   gitHostKeyVerificationConfiguration:
     sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
   globalJobDslSecurityConfiguration:
-    useScriptSecurity: true
+    useScriptSecurity: false
   scriptApproval:
     approvedScriptHashes:
     - "SHA512:cc705c9b78a0e74ef6848be52631c947f6070397276679b3ba9fda66c3d1a4ad4aca2190249bdd28e1682b60db0d09c9ccfafb1f2dd3a74b03a6e1de1cef8052"
@@ -233,5 +233,4 @@ tool:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
 jobs:
-  - file: /usr/local/job-one.groovy
-  - file: /usr/local/parallel-jobs.groovy
+  - file: /usr/local/jobLoader.groovy

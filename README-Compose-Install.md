@@ -1,6 +1,6 @@
 # To run the Images:
 ```bash
-
+./update-image.sh
 ```
 
 # To get all plguins and their coresponding versions
