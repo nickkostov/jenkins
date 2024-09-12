@@ -15,8 +15,8 @@ services:
     command: --storage-driver overlay2
 
   jenkins:
-    image: jenkins-image:latest
-    #build: ./dockerfiles
+    #image: jenkins-image:latest
+    build: ./dockerfiles
     #links:
     #  - "ssh-agent:ssh"
     container_name: jenkins

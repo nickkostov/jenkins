@@ -30,8 +30,13 @@ jenkins:
   disableRememberMe: true
   labelAtoms:
   - name: "built-in"
+  - name: "Debian Based Agent"
+  - name: "built-in"
+  - name: "debian"
+  - name: "master"
+  labelString: "master"
   markupFormatter: "plainText"
-  mode: NORMAL
+  mode: EXCLUSIVE
   myViewsTabBar: "standard"
   nodeMonitors:
   - "architecture"
@@ -44,6 +49,13 @@ jenkins:
       freeSpaceThreshold: "1GiB"
       freeSpaceWarningThreshold: "2GiB"
   - "responseTime"
+  nodes:
+  - permanent:
+      labelString: "debian"
+      launcher: "inbound"
+      name: "Debian Based Agent"
+      remoteFS: "/home/vagrant"
+      retentionStrategy: "always"
   numExecutors: 2
   primaryView:
     all:
