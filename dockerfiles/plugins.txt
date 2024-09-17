@@ -1,6 +1,6 @@
 ant:511.v0a_a_1a_334f41b_
 antisamy-markup-formatter:162.v0e6ec0fcfcf6
-apache-httpcomponents-client-4-api:4.5.14-208.v438351942757
+apache-httpcomponents-client-5-api:5.3.1-117.v4d95117cd34f
 asm-api:9.7-33.v4d23ef79fcc8
 authentication-tokens:1.119.v50285141b_7e1
 blueocean-bitbucket-pipeline:1.27.14
@@ -29,7 +29,7 @@ build-timeout:1.33
 caffeine-api:3.1.8-133.v17b_1ff2e0599
 checks-api:2.2.1
 cloudbees-bitbucket-branch-source:888.v8e6d479a_1730
-cloudbees-folder:6.942.vb_43318a_156b_2
+cloudbees-folder:6.951.v5f91d88d76b_b_
 commons-lang3-api:3.17.0-84.vb_b_938040b_078
 commons-text-api:1.12.0-129.v99a_50df237f7
 credentials-binding:681.vf91669a_32e45
@@ -62,12 +62,12 @@ javax-activation-api:1.2.0-7
 jaxb:2.3.9-1
 jenkins-design-language:1.27.14
 jjwt-api:0.11.5-112.ve82dfb_224b_a_d
-job-dsl:1.88
+job-dsl:1.89
 joda-time-api:2.12.7-29.v5a_b_e3a_82269a_
 jquery3-api:3.7.1-2
 json-api:20240303-41.v94e11e6de726
 json-path-api:2.9.0-58.v62e3e85b_a_655
-junit:1296.vb_f538b_c88630
+junit:1300.v03d9d8a_cf1fb_
 ldap:725.v3cb_b_711b_1a_ef
 mailer:472.vf7c289a_4b_420
 matrix-auth:3.2.2
@@ -119,3 +119,4 @@ workflow-support:920.v59f71ce16f04
 ws-cleanup:0.46
 docker-plugin:1.6.2
 ssh-slaves:2.973.v0fa_8c0dea_f9f
+xml-job-to-job-dsl:0.1.13

@@ -13,4 +13,3 @@ Jenkins.instance.pluginManager.plugins.each{
     println ("${plugin.getShortName()}:${plugin.getVersion()}")
 }
 ```
-
