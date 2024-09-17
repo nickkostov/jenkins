@@ -24,7 +24,7 @@ folder(projectDir) {
 }
 
 folder(devFolder) {
-    displayName("${projectName} ${envProjectDev}createEnvironmentFolder(String env) {")
+    displayName("${projectName} ${envProjectDev}")
     description(devDescription)
 }
 
