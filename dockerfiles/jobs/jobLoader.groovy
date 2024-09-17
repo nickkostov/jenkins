@@ -28,6 +28,25 @@ folder(devFolder) {
     description(devDescription)
 }
 
+
+//multibranchPipelineJob("${devFolder}/MultiBranchLogic") {
+//    branchSources {
+//        git {
+//            id('123456789') // IMPORTANT: use a constant and unique identifier
+//            remote('git@github.com:nickkostov/project-repo-template.git')
+//            credentials('git-ecdsa')
+//            includes('JENKINS-*')
+//        }
+//    }
+//    orphanedItemStrategy {
+//        discardOldItems {
+//            numToKeep(20)
+//        }
+//    }
+//}
+
+
+
 folder(uatFolder) {
     displayName("${projectName} ${envProjectUat}")
     description(uatDescription)
