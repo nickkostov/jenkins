@@ -9,7 +9,7 @@ def envProjectProd = "prod"
 def devFolder = "${projectDir}/${envProjectDev}"
 def uatFolder = "${projectDir}/${envProjectUat}"
 def prodFolder = "${projectDir}/${envProjectProd}"
-// 
+// Pseudo description
 def projectDescription = "Jenkins JOBS for ${projectName}"
 // Dev Description:
 def devDescription = "Dedicated Folder for all development (DEV) jobs associated with ${projectName}"
@@ -28,24 +28,14 @@ folder(devFolder) {
     description(devDescription)
 }
 
-
-//multibranchPipelineJob("${devFolder}/MultiBranchLogic") {
-//    branchSources {
-//        git {
-//            id('123456789') // IMPORTANT: use a constant and unique identifier
-//            remote('git@github.com:nickkostov/project-repo-template.git')
-//            credentials('git-ecdsa')
-//            includes('JENKINS-*')
-//        }
-//    }
-//    orphanedItemStrategy {
-//        discardOldItems {
-//            numToKeep(20)
-//        }
-//    }
+//multibranchPipelineJob("${projectDir}/${devFolder}/MultiBranchLogic") {
 //}
+job("${devFolder}/justAjOb") {
 
-
+}
+multibranchPipelineJob("${devFolder}/MultiBranchLogic") {
+    
+}
 
 folder(uatFolder) {
     displayName("${projectName} ${envProjectUat}")
