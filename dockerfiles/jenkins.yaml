@@ -17,6 +17,12 @@ credentials:
           scope: GLOBAL
           username: "nick@MP-LT4R2QP7"
           usernameSecret: true
+      - usernamePassword:
+          description: "Git Hub Personal Token"
+          id: "github_credentials"
+          password: "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"
+          scope: GLOBAL
+          username: "nickkostov"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
@@ -245,4 +251,5 @@ tool:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
 jobs:
-  - file: /usr/local/jobLoader.groovy
+  - file: /usr/local/projectLoader.groovy
+  - file: /usr/local/jenkinsDefinedJobs.groovy

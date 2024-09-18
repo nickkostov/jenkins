@@ -34,7 +34,24 @@ job("${devFolder}/justAjOb") {
 
 }
 multibranchPipelineJob("${devFolder}/MultiBranchLogic") {
-    
+    displayName("Multi Branch Pipeline")
+    description("This is a test multibranch coming out of a DSL script")
+
+    branchSources {
+         github {
+           apiUri("https://api.github.com")
+           repository("project-repo-template")
+           repoOwner("nickkostov")
+           scanCredentialsId("github_credentials")
+           id("master")
+           includes("master")
+         }
+    }
+    factory {
+        workflowBranchProjectFactory {
+            scriptPath("Jenkinsfile")
+        }
+    }
 }
 
 folder(uatFolder) {
@@ -47,39 +64,3 @@ folder(prodFolder) {
     description(prodDescription)
 }
 
-//// Project Information
-//def projectName = "Business Application 1"
-//def projectDir = "Project 1"
-//
-//// Environments
-//def environments = ['dev', 'uat', 'prod']
-//
-//// Descriptions for each environment
-//def envDescriptions = [
-//    dev: "Dedicated Folder for all development (DEV) jobs associated with ${projectName}",
-//    uat: "Dedicated Folder for all User Acceptance and Testing (UAT) jobs associated with ${projectName}",
-//    prod: "Dedicated Folder for all Production (PROD) jobs associated with ${projectName}"
-//]
-//
-//// Project Folder Description
-//def projectDescription = "Jenkins JOBS for ${projectName}"
-//
-//// Function to create folders for each environment
-//def createEnvironmentFolder(String env) {
-//    def envFolder = "${projectDir}/${env}"
-//    folder(envFolder) {
-//        displayName("${projectName} ${env.toUpperCase()}")
-//        description(envDescriptions[env])
-//    }
-//}
-//
-//// Create the main project folder
-//folder(projectDir) {
-//    displayName(projectName)
-//    description(projectDescription)
-//}
-//
-//// Create folders for each environment
-//environments.each { env ->
-//    createEnvironmentFolder(env)
-//}
