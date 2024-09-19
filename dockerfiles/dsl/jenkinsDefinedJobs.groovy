@@ -46,9 +46,9 @@ def manyRepoAdder = [
 ]
 
 def defaultValuesOfConfig = [
-    includes: 'master'
-    repo-owner: ''
-    credentials: ''
+    includes: 'master',
+    repo_owner: '', // Does not support -
+    credentials: '',
 
 ]
 
