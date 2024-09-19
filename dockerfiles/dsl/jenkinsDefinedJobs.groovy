@@ -37,8 +37,41 @@ def manyJobCreator  = [
     'Packer': 'Job',
     'Build': 'Job',
 ]
+
+def manyRepoAdder = [
+    'repository-1': 'master',
+    'repository-2': 'master',
+    'repository-3': 'master',
+    'repository-4': 'master',
+]
+
+def defaultValuesOfConfig = [
+    includes: 'master'
+    repo-owner: ''
+    credentials: ''
+
+]
+
+// To call the default values of Config:
+// println ("${defaultValuesOfConfig.includes}") if I ever need to test this again
 manyJobCreator.each { key, val ->
     multibranchPipelineJob("$key-$val") {
-
+    branchSources {
+         github {
+           apiUri("https://api.github.com")
+        manyRepoAdder.each { repo, branch ->
+           repository("$repo")
+           repoOwner("nickkostov")
+           scanCredentialsId("github_credentials")
+           id("$branch")
+           includes("master")
+        }
+         }
+    }
+    factory {
+        workflowBranchProjectFactory {
+            scriptPath("Jenkinsfile")
+        }
+    }
     }
 }
