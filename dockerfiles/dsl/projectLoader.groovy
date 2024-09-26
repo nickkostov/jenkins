@@ -63,4 +63,3 @@ folder(prodFolder) {
     displayName("${projectName} ${envProjectProd}")
     description(prodDescription)
 }
-

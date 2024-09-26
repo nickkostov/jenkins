@@ -30,6 +30,12 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "-u", "admin:11d308610c0b8145a44ffdb4bc4f9ac651", "http://localhost:8080/login"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
     volumes:
       - jenkins_home:/var/jenkins_home:rw
       - ./jobs:/var/jenkins_home/jobs:rw

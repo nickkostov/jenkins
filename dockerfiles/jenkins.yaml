@@ -10,17 +10,17 @@ credentials:
 # Indentation is important. Curious how could obfuscate this ....  
               privateKey: |
                 -----BEGIN EC PRIVATE KEY-----
-                MHcCAQEEIO1/a39+a4tdUrav+qWhx1Ywo4plmj/kF90o6FZxC6QFoAoGCCqGSM49
-                AwEHoUQDQgAETRY2K/pf/zmartQw7jfTATldUc5miSXcUauosbq4uuMP1Z7sqFEB
-                m0DhH5EbNzf0Q/JJM9qXvPq3+1eBuLNvkg==
+                ----------------------------------------------------------------
+                ----------------------------------------------------------------
+                ------------------------------------
                 -----END EC PRIVATE KEY-----
           scope: GLOBAL
-          username: "nick@MP-LT4R2QP7"
+          username: "HOSTNAME"
           usernameSecret: true
       - usernamePassword:
           description: "Git Hub Personal Token"
           id: "github_credentials"
-          password: "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"
+          password: "TOKEN"
           scope: GLOBAL
           username: "nickkostov"
 jenkins:
@@ -60,7 +60,7 @@ jenkins:
       labelString: "debian"
       launcher: "inbound"
       name: "Debian Based Agent"
-      remoteFS: "/home/vagrant"
+      remoteFS: "/home/jenkins"
       retentionStrategy: "always"
   numExecutors: 2
   primaryView:
@@ -68,8 +68,6 @@ jenkins:
       name: "all"
   projectNamingStrategy: "standard"
   quietPeriod: 5
-  remotingSecurity:
-    enabled: true
   scmCheckoutRetryCount: 0
   securityRealm:
     local:
@@ -78,7 +76,7 @@ jenkins:
       users:
       - id: "admin"
         name: "Admin User"
-        password: "admin123"
+        password: "PASSWORD"
         properties:
         - "apiToken"
         - "consoleUrlProvider"
@@ -92,7 +90,7 @@ jenkins:
         - "experimentalFlags"
       - id: "developer"
         name: "Developer User"
-        password: "devpassword"
+        password: "PASSWORD"
         properties:
         - "apiToken"
         - "consoleUrlProvider"
@@ -195,7 +193,7 @@ unclassified:
   globalLibraries:
     libraries:
     - defaultVersion: "master"
-      implicit: true
+      implicit: false
       name: "Build Library"
       retriever:
         modernSCM:
@@ -223,7 +221,7 @@ unclassified:
     storage: "file"
   location:
     adminAddress: "admin@example.com"
-    url: "http://localhost:8080/"
+    url: "http://localhost:8080"
   mailer:
     charset: "UTF-8"
     useSsl: false
@@ -242,6 +240,23 @@ unclassified:
     allPipelines: false
     elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
     systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  thinBackup:
+    backupAdditionalFiles: false
+    backupBuildArchive: false
+    backupBuildResults: true
+    backupBuildsToKeepOnly: false
+    backupConfigHistory: false
+    backupNextBuildNumber: false
+    backupPath: "/var/jenkins_home/jenkins_backup"
+    backupPluginArchives: false
+    backupUserContents: false
+    cleanupDiff: false
+    failFast: true
+    forceQuietModeTimeout: 120
+    fullBackupSchedule: "15 3 * * *"
+    moveOldBackupsToZipFile: true
+    nrMaxStoredFull: -1
+    waitForIdle: true
 tool:
   git:
     installations:
